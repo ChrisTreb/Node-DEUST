@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand mr-5" href="/">
+        <img class="rounded" src="https://i.etsystatic.com/14675880/r/il/e78a24/1262647919/il_570xN.1262647919_hr7x.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+        Alien Discovery Report 
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="/create">Add</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid wrapper">
+
+    <section class="row" style="min-height: 100vh">
+
+        <div class="col-md-1 bg-dark"></div>
+
+        <div class="col-md-10">
+
+            <p class="pt-3"><strong>Species list</strong></p>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Behaviour</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each aliensArr}}
+                        <tr>
+                            <th scope="row">{{ this.name }} <br> <a class="btn btn-dark btn-sm" href="/alien/{{ @index }}">Details</a> </th>
+                            <td><img class="img-fluid" style="max-width: 100px" src="{{ this.image }}"/></td>
+                            <td> {{ this.behaviour }} </td>
+                            <td> {{ this.description }} </td>
+                            <td style="font-size: 0.8em">{{#if this.date}}<dt>Posted:</dt><dd>{{ this.date }}</dd>{{/if}} {{#if this.updateDate}} <dt>Updated:</dt><dd>{{ this.updateDate }}</dd>{{/if}}</td>
+                            <td><a class="btn btn-warning" href="/edit/{{ @index }}">Edit</a></td>
+                            <td><a class="btn btn-danger" href="/delete/{{ @index }}">Delete</a></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-md-1 bg-dark"></div>
+
+    </section>
+</div>
+
