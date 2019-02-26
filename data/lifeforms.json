@@ -4,8 +4,8 @@
         "name": "Alien",
         "image": "https://list25.com/wp-content/uploads/2013/08/Slide2535.jpg",
         "description": "If E.T. became known for being the most lovable, Alien, no doubt, holds the record of the nastiest member of the band. This creature breeds within a human host and grows into a lizard-like alien. Its mouth-within-a-mouth, teeth that are similar to daggers and aggression complements the gruesome style of the film. ",
-        "behaviour": "Dangerous",
-        "updateDate": "22/02/2019, 14:35:13"
+        "behaviour": "Neutral",
+        "updateDate": "26/02/2019, 15:29:59"
     },
     {
         "id": 2,
@@ -91,9 +91,9 @@
         "id": 12,
         "name": "Thomas Jerome Newton",
         "image": "https://list25.com/wp-content/uploads/2013/08/Slide1436.jpg",
-        "description": "Perfectly portrayed by David Bowie, the humanoid alien in the 1976 sci-fi parable, ‘Man Who Fell to Earth’, becomes an extraterrestrial entrepreneur on Earth. His ultimate goal was to build a spacecraft that would transport water from Earth to Newton’s water-deprived home planet. ",
+        "description": "Perfectly portrayed by David Bowie, the humanoid alien in the 1976 sci-fi parable, ‘Man Who Fell to Earth’, becomes an extraterrestrial entrepreneur on Earth. His ultimate goal was to build a spacecraft that would transport water from Earth to Newton’s water-deprived home planet.",
         "behaviour": "Neutral",
-        "date": "21/02/2019, 21:00:23"
+        "updateDate": "25/02/2019, 13:41:01"
     },
     {
         "id": 13,

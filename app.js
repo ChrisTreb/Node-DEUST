@@ -4,12 +4,14 @@ const app = express();
 const dateFormat = require('dateformat');
 const bodyParser = require('body-parser');
 const fs = require('fs');
+// const router = express.Router();
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static('public'));
 
 // Read file lifeforms.json in data directory
-let retreivedData = fs.readFileSync('data/lifeforms.json');
-let aliensNewList = JSON.parse(retreivedData);
+let retrievedData = fs.readFileSync('data/lifeforms.json');
+let aliensNewList = JSON.parse(retrievedData);
 
 // Register Handlebars view engine
 app.engine('.hbs', exphbs(
@@ -115,6 +117,16 @@ app.post('/edit/:id', function(req, res) {
   });
   res.redirect('/'); // Redirect to home page
 });
+
+// Page not found
+app.use((req, res, next) => {
+  res.status(404).send('Not Found');
+})
+
+// Intenal server error
+app.use((err, req, res, next) => {
+  res.status(500).send('Intenal server error');
+})
 
 app.listen(process.env.PORT || 3000, () => {
   console.log('App is running → PORT 3000');
