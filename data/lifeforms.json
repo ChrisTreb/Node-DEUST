@@ -1,11 +1,11 @@
 [
     {
         "id": 1,
-        "name": "Tangi",
+        "name": "Alien Xenomorph",
         "image": "https://list25.com/wp-content/uploads/2013/08/Slide2535.jpg",
         "description": "If E.T. became known for being the most lovable, Alien, no doubt, holds the record of the nastiest member of the band. This creature breeds within a human host and grows into a lizard-like alien. Its mouth-within-a-mouth, teeth that are similar to daggers and aggression complements the gruesome style of the film. ",
-        "behaviour": "Neutral",
-        "updateDate": "28/02/2019, 18:57:13"
+        "behaviour": "Dangerous",
+        "updateDate": "07/03/2019, 16:48:29"
     },
     {
         "id": 2,
