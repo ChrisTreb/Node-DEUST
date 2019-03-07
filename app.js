@@ -4,7 +4,6 @@ const app = express();
 const dateFormat = require('dateformat');
 const bodyParser = require('body-parser');
 const fs = require('fs');
-// const router = express.Router();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
@@ -56,7 +55,7 @@ app.post('/create', function(req, res) {
 
   // Check if ID already exists in array and add 1 if exist
   aliensNewList.forEach(element => {
-    if(element.id == newAlien.id)
+    if(element.id === newAlien.id)
     newAlien.id ++; 
   });
   
@@ -85,6 +84,7 @@ app.get('/delete/:id' , function(req, res) {
 // Edit item
 app.get('/edit/:id', function(req, res) {
   let alien = aliensNewList[req.params.id];
+  console.log(alien);
   res.render('edit', { alien }); // Render edit view for edition
 });
 
@@ -120,12 +120,12 @@ app.post('/edit/:id', function(req, res) {
 
 // Page not found
 app.use((req, res, next) => {
-  res.status(404).send('Not Found');
+  res.status(404).render('error');
 })
 
-// Intenal server error
+// Internal server error
 app.use((err, req, res, next) => {
-  res.status(500).send('Intenal server error');
+  res.status(500).send('Internal server error');
 })
 
 app.listen(process.env.PORT || 3000, () => {

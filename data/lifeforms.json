@@ -1,11 +1,11 @@
 [
     {
         "id": 1,
-        "name": "Alien",
+        "name": "Tangi",
         "image": "https://list25.com/wp-content/uploads/2013/08/Slide2535.jpg",
         "description": "If E.T. became known for being the most lovable, Alien, no doubt, holds the record of the nastiest member of the band. This creature breeds within a human host and grows into a lizard-like alien. Its mouth-within-a-mouth, teeth that are similar to daggers and aggression complements the gruesome style of the film. ",
         "behaviour": "Neutral",
-        "updateDate": "26/02/2019, 15:29:59"
+        "updateDate": "28/02/2019, 18:57:13"
     },
     {
         "id": 2,
@@ -110,13 +110,5 @@
         "description": "The threat of Earth’s next-door neighbors should not be ignored and dismissed easily. Yet, the stepping of Marvin the Martian on planet Earth comes off as entertaining, instead of threatening.",
         "behaviour": "Dangerous",
         "date": "21/02/2019, 21:01:22"
-    },
-    {
-        "id": 15,
-        "name": "Flesh Eaters",
-        "image": "https://list25.com/wp-content/uploads/2013/08/Slide1150.jpg",
-        "description": "Well, the alien flesh eaters in the Little Shop of Horror are among those creatures that have been popular because of the scariness and size factors. The flesh-eating plant even offered fame and fortune in exchange for a delectable meal – humans.",
-        "behaviour": "Dangerous",
-        "date": "21/02/2019, 21:02:20"
     }
 ]
