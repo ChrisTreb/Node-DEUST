@@ -39,13 +39,13 @@
                     <tbody>
                         {{#each aliensArr}}
                         <tr>
-                            <th scope="row">{{ this.name }} <br> <a class="btn btn-dark btn-sm" href="/alien/{{ @index }}">Details</a> </th>
+                            <th scope="row">{{ this.name }} <br> <a class="btn btn-dark btn-sm" href="/alien/{{ this.id }}">Details</a> </th>
                             <td><img class="img-fluid" style="max-width: 100px" src="{{ this.image }}"/></td>
                             <td> {{ this.behaviour }} </td>
                             <td> {{ this.description }} </td>
                             <td style="font-size: 0.8em">{{#if this.date}}<dt>Posted:</dt><dd>{{ this.date }}</dd>{{/if}} {{#if this.updateDate}} <dt>Updated:</dt><dd>{{ this.updateDate }}</dd>{{/if}}</td>
-                            <td><a class="btn btn-warning" href="/edit/{{ @index }}">Edit</a></td>
-                            <td><a class="btn btn-danger" href="/delete/{{ @index }}">Delete</a></td>
+                            <td><a class="btn btn-warning" href="/edit/{{ this.id }}">Edit</a></td>
+                            <td><a class="btn btn-danger" href="/delete/{{ this.id }}">Delete</a></td>
                         </tr>
                         {{/each}}
                     </tbody>

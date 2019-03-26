@@ -8,13 +8,16 @@ let aliensNewList = JSON.parse(retrievedData);
 
 
 routes.get('/', (req, res) => {
-  res.render('index', {aliensArr: aliensNewList}); // Mettre les variable dans la vue
+  res.render('index', {aliensArr: aliensNewList}); // render alien's list into view
 });
 
 // Get individual page with ID
 routes.get('/alien/:id', function(req, res) {
-  let alien = aliensNewList[req.params.id];
-  res.render('alien', { alien }); // Render edit view for edition
+  let alien = aliensNewList.find((a) => a.id === parseInt(req.params.id, 10));
+  if ( alien < 0 || alien === undefined ) {
+    return res.status(404).render('error');
+  }
+  res.render('alien', { alien });
 });
 
 // Create Form view 
@@ -34,18 +37,11 @@ routes.post('/create', function(req, res) {
     date: postDate
   }
 
-  newAlien.id = aliensNewList.length + 1; // Defining alien ID starting at 1
-
-  // Check if ID already exists in array and add 1 if exist
-  /* aliensNewList.forEach(element => {
-    if(element.id === newAlien.id)
-    newAlien.id ++; 
-  });
-  */
+  // Defining alien ID starting at 0
+  newAlien.id = aliensNewList.length;
 
   // Check the last id in array and add 1
-  
-  let lastId = aliensNewList.reduce((biggest, a) => Math.max(biggest, a.id), 0) + 1
+  let lastId = aliensNewList.reduce((biggest, a) => Math.max(biggest, a.id), 0) + 1;
   console.log(lastId);
 
   newAlien.id = lastId; 
@@ -62,7 +58,11 @@ routes.post('/create', function(req, res) {
 
 // Delete item
 routes.get('/delete/:id' , function(req, res) {
-  aliensNewList.splice(req.params.id, 1);
+  let index = aliensNewList.find((a) => a.id === parseInt(req.params.id, 10));
+  if ( index < 0 || index === undefined ) {
+    return res.status(404).render('error');
+  }
+  aliensNewList.splice(index, 1);
 
   // Write files in lifeforms.json
   fs.writeFile('data/lifeforms.json', JSON.stringify(aliensNewList, null, 4), function (err) {
@@ -74,7 +74,10 @@ routes.get('/delete/:id' , function(req, res) {
 
 // Edit item
 routes.get('/edit/:id', function(req, res) {
-  let alien = aliensNewList.find((a) => a.id === parseInt(req.params.id, 10) + 1); // Loop into the array to find matching element
+  let alien = aliensNewList.find((a) => a.id === parseInt(req.params.id, 10)); // Loop into the array to find matching element
+  if ( alien < 0 || alien === undefined ) {
+    return res.status(404).render('error');
+  }
   console.log(alien);
   res.render('edit', { alien }); // Render edit view for edition
 });
