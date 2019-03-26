@@ -8,7 +8,7 @@ let aliensNewList = JSON.parse(retrievedData);
 
 
 routes.get('/', (req, res) => {
-  res.render('index', {aliensArr: aliensNewList}); // render alien's list into view
+  res.render('index', {aliensArr: aliensNewList}); // render aliens list into view
 });
 
 // Get individual page with ID
